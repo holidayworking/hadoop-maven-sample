@@ -15,11 +15,11 @@ public class WordCount extends Configured implements Tool {
     @Override
     public int run(String[] args) throws Exception {
         if (args.length != 2) {
-            System.err.println("Usage: JapaneseWordCount <input path> <output path>");
+            System.err.println("Usage: WordCount <input path> <output path>");
             return -1;
         }
 
-        Job job = new Job(getConf(), "JapaneseWordCount");
+        Job job = new Job(getConf(), "WordCount");
         job.setJarByClass(WordCount.class);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
